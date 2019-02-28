@@ -16,7 +16,7 @@ $ python3 predictss.py -f inputfile -o outputfile_for_plot
 ```
 Where output is a .txt file with input information and data generated.  
 
-Details of the generated data are described in the [data_description.pdf]()
+Details of the generated data are described in the [data_description.pdf](examples/output_description.pdf)
 #### Plot the strengths with the outputfile_for_plot
 ```
 $ python3 predictss.py -f outputfile_for_plot

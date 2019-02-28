@@ -1,6 +1,6 @@
 # SSPredict: Solid-Solution Strengthening Prediction
 
-A command line tool to plot solid solution strengthening stresses of a complex concentrated alloys (CCAs). The goal is to accelerate the discovery of high strength CCAs based on solid solution strengthening mechanisms. It is designed to help visualize the solid solution strengthening stress regarding the vast composition space of CCAs. The formulations are based on an elasticity-based model for random solid solution alloys [ref.1].
+A command line tool to plot solid solution strengthening stresses of a complex concentrated alloys (CCAs). The goal is to accelerate the discovery of high strength CCAs based on solid solution strengthening. It is designed to help visualize the solid solution strengthening stress regarding the combination of components and the vast composition space of CCAs. The formulations are based on an elasticity-based model for random solid solution alloys [ref.1].
 
 ## Getting Started
 The tool is currently working with python3
@@ -27,7 +27,7 @@ Use predictss.py to predict data from an inputfile
 ```
 $ python3 predictss.py -f inputfile -o outputfile_for_plot  
 ```
-Where outputfile_for_plot is a .txt file with input information and data generated.  
+Where outputfile_for_plot is a .txt file including input information and data generated.  
 
 Details of the generated data are described in the [data_description.pdf](examples/output_description.pdf)
 #### Plot the strengths with the outputfile_for_plot

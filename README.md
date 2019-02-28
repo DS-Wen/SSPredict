@@ -9,7 +9,6 @@ A command line tool to plot solid solution strengthening stresses of a complex c
 
 
 ## Examples
-
 ![](SSPredict/examples/MnFe-CoNi-Al/MnFe-CoNi-Al_plot.png)
 ![](SSPredict/examples/Mn-FeCoNi-AlCu/Mn-FeCoNi-AlCu_plot.png)
 ![](SSPredict/examples/MnFe-CoNi-AlCu/MnFe-CoNi-AlCu_plot.png)

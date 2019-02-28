@@ -14,11 +14,16 @@ The tool is currently working with python3
 ### Setup input file
 [Here to see the input file setup and examples](/examples/input_guide.md)
 ### Command Lines
-#### Predict the strengths with an inputfile
+#### Predict the strengths
+Under sspredict/ 
+```
+$ cd /path/to/sspredict/
+```
+Use predictss.py to predict data from an inputfile
 ```
 $ python3 predictss.py -f inputfile -o outputfile_for_plot  
 ```
-Where output is a .txt file with input information and data generated.  
+Where outputfile_for_plot is a .txt file with input information and data generated.  
 
 Details of the generated data are described in the [data_description.pdf](examples/output_description.pdf)
 #### Plot the strengths with the outputfile_for_plot

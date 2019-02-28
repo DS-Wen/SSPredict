@@ -4,6 +4,10 @@ A command line tool to plot solid solution strengthening stresses of a complex c
 
 ## Getting Started
 The tool is currently working with python3
+Clone the tool to where you want to start the project:
+```  
+$ git clone https://github.com/DS-Wen/SSPredict.git .
+```
 #### Packages:
 * matplotlib, coding version 1.13.3
 * numpy, coding version 2.1.0

@@ -3,7 +3,11 @@
 A command line tool to plot solid solution strengthening stresses of a complex concentrated alloys (CCAs). The goal is to accelerate the discovery of high strength CCAs based on solid solution strengthening mechanisms. It is designed to help visualize the solid solution strengthening stress regarding the vast composition space of CCAs. The formulations are based on an elasticity-based model for random solid solution alloys [ref.1].
 
 ## Getting Started
-
+The tool is currently working with python3
+#### Packages:
+* matplotlib, coding version 1.13.3
+* numpy, coding version 2.1.0
+* pandas, coding version 0.23.4
 
 ## Using the tool
 

@@ -37,7 +37,7 @@ def main(inputfile, outputfile):
     sA = ':'.join([str(s) for s in nrA]);sB = ':'.join([str(s) for s in nrB]);
     sC = ':'.join([str(s) for s in nrC]);
     ratioline = 'ratio:'+sA+','+sB+','+sC+'\n'
-    print(ratioline)
+    #print(ratioline)
     ss = ss_model(V,E,S,newcons[1],ep,T,e_order,inputfile,b[0])
     lines1, writeheader = ss.columnheader()
     with open('%s.txt' % outputfile,'a') as f:

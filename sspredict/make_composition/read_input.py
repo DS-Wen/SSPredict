@@ -34,17 +34,17 @@ class read_inputfile:
         lines = open(self.file).readlines()
         for line in lines :
             if ('temperature') in line:
-                try:T = line.strip('\n').split(':')[1].strip(' ');print(T)
+                try:T = line.strip('\n').split(':')[1].strip(' ');print('Temperature: ',T)
                 except:print('temperature input invalid');quit();
             if ('increment') in line:
-                try:inc = line.strip('\n').split(':')[1].strip(' ');print(inc)
+                try:inc = line.strip('\n').split(':')[1].strip(' ');print('Increment: ', inc)
                 except:print('temperature input invalid');quit();
             if ('strain_r') in line:
-                try: ep = (line.strip('\n').split(':')[1].strip(' '));print(ep)
+                try: ep = (line.strip('\n').split(':')[1].strip(' '));print('Strain rate: ', ep)
                 except:print('strain rate input invalid')
             if ('data') in line:
                 N = lines.index(line)+1
-        print(N)
+        #print(N)
         try: data =pd.read_csv(self.file,header=N,delimiter=',');print(data)
         except:print('illegal input file format');quit()
         Vlist = [];Elist=[];Slist=[]

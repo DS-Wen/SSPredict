@@ -7,7 +7,24 @@ A command line tool to plot solid solution strengthening stresses of a complex c
 
 ## Using the tool
 
+### Setup input file
+[Here to see the input file setup and examples](/examples/input_guide.md)
+### Command Lines
+#### Predict the strengths with an inputfile
+```
+$ python3 predictss.py -f inputfile -o outputfile_for_plot  
+```
+Where output is a .txt file with input information and data generated.  
 
+Details of the generated data are described in the [data_description.pdf]()
+#### Plot the strengths with the outputfile_for_plot
+```
+$ python3 predictss.py -f outputfile_for_plot
+```
+or to save the .png directly:
+```
+$ python3 predictss.py -f outputfile_for_plot -s xxx
+```
 ## Examples
 ![](examples/MnFe-CoNi-Al/MnFe-CoNi-Al_plot.png)
 ![](examples/Mn-FeCoNi-AlCu/Mn-FeCoNi-AlCu_plot.png)

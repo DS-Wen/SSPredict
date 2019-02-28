@@ -1,5 +1,5 @@
 -line1: title line
--line1: increment of composition (0 to 100)
+-line2: increment of composition (0 to 100)
 -line3: strain rate
 -line4: temperature
 -line5: group elements into pseudo-ternary components (psA,psB,psC),

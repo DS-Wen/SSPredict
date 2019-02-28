@@ -3,7 +3,7 @@
 A command line tool to plot solid solution strengthening stresses of a complex concentrated alloys (CCAs). The goal is to accelerate the discovery of high strength CCAs based on solid solution strengthening. It is designed to help visualize the solid solution strengthening stress regarding the combination of components and the vast composition space of CCAs. The formulations are based on an elasticity-based model for random solid solution alloys [ref.1].
 
 ## Getting Started
-The tool is currently working with python3
+The tool is currently working with python3  
 Clone the tool to where you want to start the project:
 ```  
 $ git clone https://github.com/DS-Wen/SSPredict.git .

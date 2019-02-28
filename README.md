@@ -2,7 +2,7 @@
 
 A command line tool to visualize the solid solution strengthening stresses of complex concentrated alloys (CCAs).  
   
-Complex concentrated alloys (CCAs) is a new type of multi-component alloy with promising properties and unexploit possibilities. Accelerating the discovery of high strength CCAs based on solid solution strengthening is challenging because of their complicated compositions. This tool is designed to visualize the solid solution strengthening stress regarding the combinations of components and the vast composition space of CCAs. Users are allowed to change alloying combinations and concentrations to explore the strengthening effects. The formulations are based on an elasticity-based model for random solid solution alloys [ref.1].
+Complex concentrated alloy (CCA) is an emerging class of multi-component alloy with promising properties and unexploit possibilities. Accelerating the discovery of high strength CCAs based on solid solution strengthening is challenging because of their complicated compositions. This tool is designed to visualize the solid solution strengthening stress regarding the combinations of components and the vast composition space of CCAs. Users are allowed to change alloying combinations and concentrations to explore the strengthening effects. The formulations are based on an elasticity-based model for random solid solution alloys [ref.1].
 
 ## Getting Started
 The tool is currently working with python3  

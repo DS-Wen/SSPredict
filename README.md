@@ -5,18 +5,21 @@ A command line tool to visualize the solid solution strengthening stresses of co
 Complex concentrated alloy (CCA) is an emerging class of multi-component alloy with promising properties and unexploit possibilities. Accelerating the discovery of high strength CCAs based on solid solution strengthening is challenging because of their complicated compositions. This tool is designed to visualize the solid solution strengthening stress regarding the combinations of components and the vast composition space of CCAs. Users are allowed to change alloying combinations and concentrations to explore the strengthening effects. The formulations are based on an elasticity-based model for random solid solution alloys [ref.1].
 
 ## Getting Started
-It is a python3-based tool, currently not working well to python2.  
-Clone the tool to where you want to start the project:
-```  
-$ git clone https://github.com/DS-Wen/SSPredict.git .
-```
+It is a python3-based tool, currently not working well on python2.  
 #### Packages:
 * matplotlib, coding version 1.13.3
 * numpy, coding version 2.1.0
 * pandas, coding version 0.23.4
 
-## Using the tool
+## Using the tool with Install
+If you want to use the tool in any folder or project you like, please read [INSTALL.md](/INSTALL.md) to install the code.  
 
+## Using the tool WITHOUT INSTALLATION
+Clone the tool to where you want to start the project:
+```  
+$ cd /path/to/dir
+$ git clone https://github.com/DS-Wen/SSPredict.git .
+```
 ### Setup input file
 [Here to see the input file setup and examples](/examples/input_guide.md)
 ### Command Lines

@@ -1,16 +1,19 @@
-from make_composition import build_mesh, read_inputfile, assign, ss_model
+try:
+    from sspredict.make_composition import build_mesh, read_inputfile, assign, ss_model
+except:
+    from make_composition import build_mesh, read_inputfile, assign, ss_model
 import csv
 import argparse
 
-parser = argparse.ArgumentParser()
-parser.add_argument('-f', '-filein', type=str, help='input filename for calculation')
-parser.add_argument('-o', '-output', type=str, help='output filename for plotting')
-args = parser.parse_args()
-# read input file
-inputfile = args.f
-outputfile = args.o # output file name
 
-def main(inputfile, outputfile):
+def main():
+    parser = argparse.ArgumentParser()
+    parser.add_argument('-f', '-filein', type=str, help='input filename for calculation')
+    parser.add_argument('-o', '-output', type=str, help='output filename for plotting')
+    args = parser.parse_args()
+    # read input file
+    inputfile = args.f
+    outputfile = args.o # output file name
     g = read_inputfile(inputfile)
     elements,ratios,e_order = g.grouping()
 
@@ -62,4 +65,4 @@ def main(inputfile, outputfile):
 
 
 if __name__ == "__main__":
-    main(inputfile, outputfile)
+    main()

@@ -2,7 +2,10 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-<!-- toc -->
+<!--
+1. ##
+   - ###
+-->
 
 ## 1.  Introduction
 
@@ -10,7 +13,7 @@ SSPredict is a command line tool to visualize the [solid solution strengthening]
 
 [Complex concentrated alloys (CCA)](https://scholar.google.com/scholar?hl=en&as_sdt=0%2C15&q=complex+concentrated+alloys&btnG=) is an emerging class of multi-component alloy with promising properties and unexploit possibilities. Accelerating the discovery of high strength CCAs based on solid solution strengthening is challenging because of their complicated compositions. 
 
-This tool is designed to **visualize** the solid solution strengthening stress regarding the combinations of components and the vast composition space of CCAs. Users are allowed to change alloying combinations and concentrations to explore the strengthening effects. The formulations are based on an elasticity-based model for random solid solution alloys. [^1,2,3]
+This tool is designed to **visualize** the solid solution strengthening stress regarding the combinations of components and the vast composition space of CCAs. Users are allowed to change alloying combinations and concentrations to explore the strengthening effects. The formulations are based on an elasticity-based model for random solid solution alloys.<sup id="a1">[1](#f1)</sup> <sup id="a2">[2](#f2)</sup> <sup id="a3">[3](#f3)</sup>
 
 
 
@@ -91,7 +94,6 @@ If there’s any questions or advice, please [open an issue](https://github.com/
 
 
 
-[^1]: [Varvenne, Céline, Aitor Luque, and William A. Curtin. "Theory of strengthening in fcc high entropy alloys." *Acta Materialia*118 (2016): 164-176.](https://doi.org/10.1016/j.actamat.2016.07.0401)  
-[^2]: [Varvenne, Céline, et al. "Solute strengthening in random alloys." *Acta Materialia* 124 (2017): 660-683.](https://doi.org/10.1016/j.actamat.2016.09.046)  
-[^3]: [Varvenne, Céline, and William A. Curtin. "Predicting yield strengths of noble metal high entropy alloys." *Scripta Materialia* 142 (2018): 92-95.](https://doi.org/10.1016/j.scriptamat.2017.08.030)
-
+<b id="f1">1</b> Varvenne, Céline, Aitor Luque, and William A. Curtin. "Theory of strengthening in fcc high entropy alloys." *Acta Materialia*118 (2016): 164-176. [↩](#a1)
+<b id="f2">1</b> Varvenne, Céline, et al. "Solute strengthening in random alloys." *Acta Materialia* 124 (2017): 660-683. [↩](#a2)
+<b id="f2">1</b> Varvenne, Céline, and William A. Curtin. "Predicting yield strengths of noble metal high entropy alloys." *Scripta Materialia* 142 (2018): 92-95. [↩](#a3)

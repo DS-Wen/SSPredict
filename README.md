@@ -2,12 +2,15 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-<!--
-1. ##
-   - ###
--->
-
-## 1.  Introduction
+<!-- TOC -->
+- [Introduction](#introduction)
+- [Required Packages](#required-packages)
+- [Usages](#usage)
+- [Examples](#examples)
+<!-- /TOC -->
+  
+  
+## Introduction
 
 SSPredict is a command line tool to visualize the [solid solution strengthening](https://en.wikipedia.org/wiki/Solid_solution_strengthening) stresses of **Complex concentrated alloys (CCAs)**.
 
@@ -17,7 +20,7 @@ This tool is designed to **visualize** the solid solution strengthening stress r
 
 
 
-## 2.  Required Packages
+## Required Packages
 
 It is a python3-based tool, currently not working well on python2.  2.1  Packages 
 
@@ -29,7 +32,7 @@ It is a python3-based tool, currently not working well on python2.  2.1  Package
 
 
 
-## 3.  Usage
+## Usage
 
 ### Using the tool with installation
 
@@ -82,7 +85,7 @@ $ python3 predictss.py -f outputfile_for_plot -s xxx
 
 
 
-## 4. Examples
+## Examples
 
 ![](examples/MnFe-CoNi-Al/MnFe-CoNi-Al_plot.png)
 ![](examples/Mn-FeCoNi-AlCu/Mn-FeCoNi-AlCu_plot.png)
@@ -94,6 +97,8 @@ If there’s any questions or advice, please [open an issue](https://github.com/
 
 
 
-<b id="f1">1</b> Varvenne, Céline, Aitor Luque, and William A. Curtin. "Theory of strengthening in fcc high entropy alloys." *Acta Materialia*118 (2016): 164-176. [↩](#a1)
-<b id="f2">1</b> Varvenne, Céline, et al. "Solute strengthening in random alloys." *Acta Materialia* 124 (2017): 660-683. [↩](#a2)
-<b id="f2">1</b> Varvenne, Céline, and William A. Curtin. "Predicting yield strengths of noble metal high entropy alloys." *Scripta Materialia* 142 (2018): 92-95. [↩](#a3)
+<b id="f1">1</b> Varvenne, Céline, Aitor Luque, and William A. Curtin. "Theory of strengthening in fcc high entropy alloys." *Acta Materialia*118 (2016): 164-176. [↩](#a1)  
+
+<b id="f2">2</b> Varvenne, Céline, et al. "Solute strengthening in random alloys." *Acta Materialia* 124 (2017): 660-683. [↩](#a2)  
+   
+<b id="f2">3</b> Varvenne, Céline, and William A. Curtin. "Predicting yield strengths of noble metal high entropy alloys." *Scripta Materialia* 142 (2018): 92-95. [↩](#a3)

@@ -1,13 +1,20 @@
 # SSPredict: Solid-Solution Strengthening Prediction
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+Table of Contents
+=================
+   * [SSPredict: Solid-Solution Strengthening Prediction](#sspredict-solid-solution-strengthening-prediction)
+      * [Introduction](#introduction)
+      * [Required Packages](#required-packages)
+      * [Usage](#usage)
+         * [Using the tool with installation](#using-the-tool-with-installation)
+         * [Using the tool WITHOUT INSTALLATION](#using-the-tool-without-installation)
+            * [Clone the tool to where you want to start the project:](#clone-the-tool-to-where-you-want-to-start-the-project)
+            * [Setup input file](#setup-input-file)
+            * [Predict the strengths](#-predict-the-strengths)
+            * [Plot the strengths with the outputfile_for_plot](#-plot-the-strengths-with-the-outputfile_for_plot)
+      * [Examples](#examples)
 
-<!-- TOC -->
-- [Introduction](#introduction)
-- [Required Packages](#required-packages)
-- [Usages](#usage)
-- [Examples](#examples)
-<!-- /TOC -->
   
   
 ## Introduction

@@ -14,6 +14,7 @@
             * [Predict the strengths](#-predict-the-strengths)
             * [Plot the strengths with the outputfile_for_plot](#-plot-the-strengths-with-the-outputfile_for_plot)
       * [Examples](#examples)
+      * 🚀 [TUTORIAL](/TUTORIAL.md)
 
   
   

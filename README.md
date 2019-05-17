@@ -44,7 +44,7 @@ It is a python3-based tool, currently not working well on python2.  2.1  Package
 ### Using the tool with installation
 
 If you want to use the tool in any folder or project you like, please read [INSTALL.md](/INSTALL.md) to install the code.  
-
+For more details of using the tool, [TUTORIAL.md](/TUTORIAL.md) is helpful. 
 
 
 ### Using the tool WITHOUT INSTALLATION
@@ -79,22 +79,26 @@ Where outputfile_for_plot is a .txt file including input information and data ge
 Details of the generated data are described in the [data_description.pdf](examples/output_description.pdf)
 
 #### 📍 Plot the strengths with the outputfile_for_plot
-
+You can plot the strength. 
 ```
-$ python3 predictss.py -f outputfile_for_plot
+$ python3 predictss.py -str outputfile_for_plot
 ```
-
+You can combine the strength contour plot with phase diagrams if you have a file generated from ThermoCalc. 
+See [TUTORIAL.md](/TUTORIAL.md) for details.  
+```
+$ python3 predictss.py -str outputfile_for_plot -pd phase_diagram_file
+```
 or to save the .png directly:
 
 ```
-$ python3 predictss.py -f outputfile_for_plot -s xxx
+$ python3 predictss.py -str outputfile_for_plot -s xxx
 ```
-
 
 
 ## Examples
 
 ![](examples/MnFe-CoNi-Al/MnFe-CoNi-Al_plot.png)
+![](examples/MnFe-CoNi-Al/MnFe-CoNi-Al_strength_phase.png)
 ![](examples/Mn-FeCoNi-AlCu/Mn-FeCoNi-AlCu_plot.png)
 ![](examples/MnFe-CoNi-AlCu/MnFe-CoNi-AlCu_plot.png)
 

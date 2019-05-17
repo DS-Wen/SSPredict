@@ -45,14 +45,35 @@ def make_segments(seg_l,seg_1,seg_2,xys,Cr,tp):
         right_xy = [[Cr-xy/2,Cr-xy/2+seg_l],[tp*xy,tp*xy]];right_seg.append(right_xy)
     return bottom_seg,left_seg,right_seg
 
+def get_pd_coordinate(pdinput):
+# clean up the Thermocalc file and grab the coordinates to plot on the ternary diagram 
+    fh = open(pdinput)
+    writedata=[]
+    ps = 0
+    for line in fh:
+        if re.search('[0-9]{2}',line):
+            s=re.split('\s* |\n',line)
+            s = list(filter(None,s))
+            s = [float(x) for x in s]
+            s.append(ps)
+            writedata.append(s)
+        if re.search('col',line):
+            ps+=1
+
+    cols = pd.DataFrame(writedata)
+    return cols
+
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('-f', '-filename', type=str, help='input filename for plotting')
     parser.add_argument('-s', '-save' ,type=str, default=None,
                          help='to save the figure ')
+    parser.add_argument('-pd', '-pdfilename',type=str,default=None, help='input phase diagram file for plotting')
     args = parser.parse_args()
     st_name = args.f
-
+    if args.pd !=None:
+        cols = get_pd_coordinate(args.pd)
+        #print(cols)
     element = ['psA','psB','psC']
 
     np.set_printoptions(formatter={'float': lambda x: "{0:0.2f}".format(x)})
@@ -134,12 +155,31 @@ def main():
     #print(lowerlim,upperlim)
     cm = plt.cm.get_cmap('inferno')
     plt.subplot(1, 2, 1)
+    if args.pd != None:
+        columnname=list(cols.columns.values)
+        lines = max(cols[columnname[2]])
+        for i in range(1,lines+1):
+            C1 = cols.loc[cols[columnname[2]] == i][columnname[0]]
+            C3 = cols.loc[cols[columnname[2]] == i][columnname[1]]
+            CX = 2*C1+0.5*C3
+            CY = C3*np.sqrt(3)/2
+            plt.plot(CX,CY,'k')
+
     Ch = plt.scatter(X,Y,c=Z,s=200,cmap=cm)
     Cl = plt.colorbar(Ch,shrink=0.75,orientation='vertical',ticks = ticks)
     #Cl.set_label(label=r'$\Delta E_{SISF} \ (mJ/m^2)$',FontSize=15,weight='bold')
     plt.clim(lowerlim, upperlim);
 
     plt.subplot(1, 2, 2)
+    if args.pd != None:
+        columnname=list(cols.columns.values)
+        lines = max(cols[columnname[2]])
+        for i in range(1,lines+1):
+            C1 = cols.loc[cols[columnname[2]] == i][columnname[0]]
+            C3 = cols.loc[cols[columnname[2]] == i][columnname[1]]
+            CX = 2*C1+0.5*C3
+            CY = C3*np.sqrt(3)/2
+            plt.plot(CX,CY,'k')
     Xi = np.linspace(min(X),max(X),1000);Yi = np.linspace(min(Y),max(Y),1000)
     XX,YY = np.meshgrid(Xi, Yi)
     ZZ = griddata(X,Y,Z,Xi,Yi,interp='nn')

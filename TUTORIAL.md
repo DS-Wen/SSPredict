@@ -1,4 +1,13 @@
 
+   * [Tutorial](#tutorial)
+      * [Strength Prediction](#strength-prediction)
+         * [Example - MnFe-CoNi-Al](#example---mnfe-coni-al)
+      * [Plot Strength Pseudo-Ternary Diagram](#plot-strength-pseudo-ternary-diagram)
+         * [Example - MnFe-CoNi-Al](#example---mnfe-coni-al-1)
+      * [Plot Strength and Phase Diagram in one Pseudo-Ternary Plot](#plot-strength-and-phase-diagram-in-one-pseudo-ternary-plot)
+         * [Example - MnFe-CoNi-Al](#example---mnfe-coni-al-2)
+
+
 # Tutorial
 You can start your own project in any folder you like:
 ```  
@@ -11,7 +20,7 @@ start your prediction with:
 $ sspredict.predict -f input_file -o predicted_data
 ```
 And your data is in your output file "predicted_data".  
-#### Example - MnFe-CoNi-Al
+### Example - MnFe-CoNi-Al
 ``` 
 $ cd examples/MnFe-CoNi-Al/ 
 $ sspredict.predict -f MnFe-CoNi-Al_input -o MnFe-CoNi-Al_result
@@ -36,7 +45,7 @@ Or you can save it the image as .png file:
 $ sspredict.plot -str predicted_data -s image_name
 ```
 
-#### Example - MnFe-CoNi-Al
+### Example - MnFe-CoNi-Al
 ```  
 $ sspredict.plot -str MnFe-CoNi-Al_result.txt -s MnFe-CoNi-Al_plot 
 ```
@@ -60,7 +69,7 @@ And save the image by:
 $ sspredict.plot -str predicted_data -pd phase_diagram -s image_name
 ```
 
-#### Example - MnFe-CoNi-Al
+### Example - MnFe-CoNi-Al
 The [phase diagram file example](/examples/MnFe-CoNi-Al/PD_MnFe-CoNi-Al) generated from ThermoCalc is like: 
 
 ```

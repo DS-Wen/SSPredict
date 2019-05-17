@@ -65,7 +65,7 @@ def get_pd_coordinate(pdinput):
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument('-f', '-filename', type=str, help='input filename for plotting')
+    parser.add_argument('-str', '-strfilename', type=str, help='input strength predicted file for plotting')
     parser.add_argument('-s', '-save' ,type=str, default=None,
                          help='to save the figure ')
     parser.add_argument('-pd', '-pdfilename',type=str,default=None, help='input phase diagram file for plotting')

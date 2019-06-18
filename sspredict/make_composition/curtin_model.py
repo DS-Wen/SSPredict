@@ -40,7 +40,7 @@ class ss_model:
         J2eV=6.2415093433*10**18
         Ty0 = 0.01785 * 0.123**(-1/3)  *   aver_S    *        q_nu**(4/3) * sum_cndVn_b6**(2/3)
         Ty0_tensile = 3.06 * Ty0
-        delta_ss = Ty0  * (1 - ((kc*self.T)/(dEb) * np.log(ep0/self.ep))**(2/3) )
+        delta_ss = Ty0_tensile  * (1 - ((kc*self.T)/(dEb) * np.log(ep0/self.ep))**(2/3) )
         writedata = []
 #writeheader = append(e for e in ['V_ave','b_ave','E_ave','mu_ave','nu_ave','sum_cnVn^2_b6','Ty0_tensile','Delta_Eb','Delta_sigma_ss'])
         for e in self.psc:

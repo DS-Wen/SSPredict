@@ -51,7 +51,7 @@ def get_pd_coordinate(pdinput):
     writedata=[]
     ps = 0
     for line in fh:
-        if re.search('[0-9]{2}',line):
+        if re.search('[0-9]{4}',line):
             s=re.split('\s* |\n',line)
             s = list(filter(None,s))
             s = [float(x) for x in s]

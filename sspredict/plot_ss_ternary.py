@@ -70,7 +70,7 @@ def main():
                          help='to save the figure ')
     parser.add_argument('-pd', '-pdfilename',type=str,default=None, help='input phase diagram file for plotting')
     args = parser.parse_args()
-    st_name = args.f
+    st_name = args.str
     if args.pd !=None:
         cols = get_pd_coordinate(args.pd)
         #print(cols)

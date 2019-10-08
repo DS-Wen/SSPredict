@@ -150,10 +150,11 @@ def main():
         Z = np.array(Zlist)
     #color = [str(item) for item in Z]
     #print(Z,type(Z),color)
-    lowerlim = round(min(Z)/100,0)*100-50;upperlim = round(max(Z)/100,0)*100+50
-    level = np.arange(lowerlim, upperlim+1, 10);ticks = ([item for item in level if item % 50 ==0])
+    lowerlim = 0#round(min(Z)/100,0)*100-50;
+    upperlim = 900#round(max(Z)/100,0)*100+50
+    level = np.arange(lowerlim, upperlim+1, 10);ticks = ([item for item in level if item % 50 ==0]);ticks1 = ([item for item in level if item % 100 ==0])
     #print(lowerlim,upperlim)
-    cm = plt.cm.get_cmap('inferno')
+    cm = plt.cm.get_cmap('Wistia')
     plt.subplot(1, 2, 1)
     if args.pd != None:
         columnname=list(cols.columns.values)
@@ -166,7 +167,8 @@ def main():
             plt.plot(CX,CY,'k')
 
     Ch = plt.scatter(X,Y,c=Z,s=200,cmap=cm)
-    Cl = plt.colorbar(Ch,shrink=0.75,orientation='vertical',ticks = ticks)
+    Cl = plt.colorbar(Ch,shrink=0.75,orientation='horizontal',ticks = ticks1)
+    Cl.set_label(label=r'$\Delta \sigma_{ss} \ (MPa)$',FontSize=15,weight='bold')
     #Cl.set_label(label=r'$\Delta E_{SISF} \ (mJ/m^2)$',FontSize=15,weight='bold')
     plt.clim(lowerlim, upperlim);
 

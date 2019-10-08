@@ -47,6 +47,8 @@ def main():
         for line in lines1:
             if 'ratio' in line:
                 line = ratioline
+            if '\n' not in line:
+                line = line+'\n'
             f.write(line)
         f.write('Start of Predicted Data\n')
         writer = csv.writer(f)

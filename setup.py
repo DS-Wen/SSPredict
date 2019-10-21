@@ -2,6 +2,7 @@ from setuptools import setup
 
 name1 = 'sspredict.plot = sspredict.plot_ss_ternary:main'
 name2 = 'sspredict.predict = sspredict.predict_ss:main'
+name3 = 'sspredict.check = sspredict.plot_ternary_other_quantity:main'
 setup(
     name='SSPredict',
     version='0.1.0',
@@ -12,7 +13,7 @@ setup(
     description='Predict and plot the solid solution strengthening stress of CCAs in pseudo-ternary diagrams',
     packages = ['sspredict','sspredict/make_composition'],
     entry_points={
-          'console_scripts': [name1,name2]
+          'console_scripts': [name1,name2,name3]
       },
     platforms='any',
     install_requires=[

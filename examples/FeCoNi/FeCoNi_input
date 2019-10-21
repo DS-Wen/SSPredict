@@ -2,8 +2,9 @@ FeCoNi
 increment: 5
 strain_r: 0.001
 temperature: 300
-e: Co, Fe,Ni
+element: Co, Fe,Ni
 ratio: 1,1,1
+structure : fcc
 data:
 Fe,Co,Ni
 12.09,11.12,10.94

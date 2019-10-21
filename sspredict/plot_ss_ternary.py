@@ -10,23 +10,34 @@ from matplotlib.mlab import griddata
 def read_file(st_name):
     lines = open(st_name).readlines()
     print('reading file...')
-    for line in lines[0:12]:
-        if ('temperature') in line:
-            try:T = line.strip('\n').split(':')[1].strip(' ');
-            except:print('temperature input invalid');quit();
-        if ('e:') in line:
-            try:g_e = [e.strip(' ') for e in (line.strip('\n').strip('e:').split(","))]
-            except:print('element input invalid');quit();
-        if ('ratio') in line:
-            try:ratios = (line.strip('\n').strip('ratio:').split(","))
-            except:print('ratio input invalid');quit();
-        if ('strain_r') in line:
-            try: ep = (line.strip('\n').split(':')[1].strip(' '));
-            except:print('strain rate input invalid')
 
-    for line in lines :
+    for line in lines:
         if ('Start of Predicted Data') in line:
             N = lines.index(line)+1;#print(N)
+    for line in lines[0:N-1] :
+
+        if re.search('temperature',line,re.IGNORECASE):
+            try:T = line.strip('\n').split(':')[1].strip(' ');print('Temperature: ',T)
+            except:print('temperature input invalid');quit();
+
+        if re.search('element',line,re.IGNORECASE):
+            try:g_e = [e.strip(' ') for e in (line.strip('\n').split(':')[1].split(","))];
+            except:print('element input invalid');quit();
+            print('Elements: '+str(g_e))
+        if ('ratio') in line:
+            try:ratios = (line.strip('\n').strip('ratio:').split(","));print('Ratio: ',ratios)
+            except:print('ratio input invalid');quit();
+        if re.search('structure',line,re.IGNORECASE):
+            structure = line.strip('\n').split(':')[1].strip(' ').lower()
+            #print('Structure: ', structure)
+        if re.search('increment',line,re.IGNORECASE):
+            try:inc = line.strip('\n').split(':')[1].strip(' ');print('Increment: ', inc)
+            except:print('temperature input invalid');quit();
+        if re.search('strain_r',line,re.IGNORECASE):
+            try: ep = (line.strip('\n').split(':')[1].strip(' '));print('Strain rate: ', ep)
+            except:print('strain rate input invalid')
+
+
     try: data =pd.read_csv(st_name,header=N,delimiter=',');#print(data)
     except:print('illegal input file format');quit()
     return data,T,g_e,ep,ratios
@@ -150,9 +161,12 @@ def main():
         Z = np.array(Zlist)
     #color = [str(item) for item in Z]
     #print(Z,type(Z),color)
-    lowerlim = 0#round(min(Z)/100,0)*100-50;
-    upperlim = 900#round(max(Z)/100,0)*100+50
-    level = np.arange(lowerlim, upperlim+1, 10);ticks = ([item for item in level if item % 50 ==0]);ticks1 = ([item for item in level if item % 100 ==0])
+    lowerlim = round(min(Z)/100,0)*100-50;
+    upperlim = round(max(Z)/100,0)*100+50
+    level = np.arange(lowerlim, upperlim+1, 10);ticks = ([item for item in level if item % 50 ==0]);
+    ticks1 = ([item for item in level if item % 50 ==0])
+    if (upperlim - lowerlim) >= 500:
+        ticks1 = ([item for item in level if item % 100 ==0])
     #print(lowerlim,upperlim)
     cm = plt.cm.get_cmap('Wistia')
     plt.subplot(1, 2, 1)

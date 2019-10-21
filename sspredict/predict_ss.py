@@ -15,7 +15,7 @@ def main():
     inputfile = args.f
     outputfile = args.o # output file name
     g = read_inputfile(inputfile)
-    elements,ratios,e_order = g.grouping()
+    elements,ratios,e_order,structure,lines1 = g.grouping()
 
     #calculate ratio with a scale of 100
 
@@ -41,8 +41,9 @@ def main():
     sC = ':'.join([str(s) for s in nrC]);
     ratioline = 'ratio:'+sA+','+sB+','+sC+'\n'
     #print(ratioline)
-    ss = ss_model(V,E,S,newcons[1],ep,T,e_order,inputfile,b[0])
-    lines1, writeheader = ss.columnheader()
+    ss = ss_model(V,E,S,newcons[1],ep,T,e_order,b[0],structure,inputfile)
+
+    writeheader = ss.columnheader()
     with open('%s.txt' % outputfile,'a') as f:
         for line in lines1:
             if 'ratio' in line:
@@ -57,7 +58,7 @@ def main():
 
     for cons in newcons:
         i = newcons.index(cons)
-        ss = ss_model(V,E,S,cons,ep,T,e_order,inputfile,b[i])
+        ss = ss_model(V,E,S,cons,ep,T,e_order,b[i],structure,inputfile)
         writedata = ss.str_calc()
         writedata_all.append(writedata)
 

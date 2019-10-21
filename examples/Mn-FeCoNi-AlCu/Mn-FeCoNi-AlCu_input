@@ -2,8 +2,9 @@ MnFeCoNiAlCu
 increment: 5
 strain_r: 0.001
 temperature: 300
-e: Mn, Fe-Ni-Co,Al-Cu
+element: Mn, Fe-Ni-Co,Al-Cu
 ratio: 1,1-1-1,1-1
+structure: fcc
 data:
 Mn,Fe,Co,Ni,Al,Cu
 12.60,12.09,11.12,10.94,16.472, 11.810

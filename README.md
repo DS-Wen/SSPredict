@@ -98,7 +98,6 @@ $ python3 predictss.py -str outputfile_for_plot -s xxx
 
 ## Examples
 
-![](examples/MnFe-CoNi-Al/MnFe-CoNi-Al_plot.png)
 ![](examples/MnFe-CoNi-Al/MnFe-CoNi-Al_strength_phase.png)
 ![](examples/Mn-FeCoNi-AlCu/Mn-FeCoNi-AlCu_plot.png)
 ![](examples/MnFe-CoNi-AlCu/MnFe-CoNi-AlCu_plot.png)

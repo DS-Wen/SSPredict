@@ -8,7 +8,7 @@ line6: - set ratios for grouped elements in pseudo-ternary components (rA,rB,rC)
  &ensp;&ensp;&ensp;&ensp;&ensp;- separated by ',', numbers are separated by '-' within one component,  
  &ensp;&ensp;&ensp;&ensp;&ensp;- if this component contains only one element: use '1  
  &ensp;&ensp;&ensp;&ensp;&ensp;- int, float will work. example 'ratio:1-1,1-3,1', 'ratio:0.5-0.4-0.1,10-90,1'  
-line7: structure of the alloy, it can be either fcc or bcc
+line7: structure of the alloy, it can be either fcc or bcc  
 line8: 'data:' indicate the start of material data  
 line9: element names separated by ','  
 line10: atomic volumes of elements, separated by ',', unit: Angstrom  

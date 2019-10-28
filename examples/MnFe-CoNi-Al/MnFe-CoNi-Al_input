@@ -3,7 +3,7 @@ increment: 10
 strain_r: 0.001
 temperature: 300
 element: Mn-Co, Fe-Ni,Al
-ratio: 1-1,1-2,1
+ratio: 1-1,1-1,1
 structure: fcc
 data:
 Mn,Fe,Co,Ni,Al

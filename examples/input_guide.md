@@ -23,7 +23,7 @@ strain_r: 0.001
 temperature: 300  
 e: Mn-Co, Fe-Ni,Al  
 ratio: 1-1,1-2,1  
-structure: fcc
+structure: fcc  
 data:  
 Mn,Fe,Co,Ni,Al  
 12.60,12.09,11.12,10.94,16.472  

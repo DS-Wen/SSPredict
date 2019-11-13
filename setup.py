@@ -5,7 +5,7 @@ name2 = 'sspredict.predict = sspredict.predict_ss:main'
 name3 = 'sspredict.check = sspredict.plot_ternary_other_quantity:main'
 setup(
     name='SSPredict',
-    version='0.1.0',
+    version='1.0.1',
     url = 'https://github.com/DS-Wen/SSPredict',
     license ='MIT',
     author='Dongsheng Wen, Michael S. Titus',

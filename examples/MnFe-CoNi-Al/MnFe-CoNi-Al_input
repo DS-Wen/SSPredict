@@ -2,7 +2,7 @@ MnFeCoNiAl
 increment: 10
 strain_r: 0.001
 temperature: 300
-element: Mn-Co, Fe-Ni,Al
+element: Mn-Fe, Co-Ni,Al
 ratio: 1-1,1-1,1
 structure: fcc
 data:

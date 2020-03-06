@@ -15,57 +15,79 @@ class read_inputfile:
         e_order = []
         fhlines = open(self.file).readlines()
 
-        for line in fhlines:
-            if re.search('element',line,re.IGNORECASE):
-                if len(line.strip('\n').split(':')[1].split(","))!=3: print('element input invalid');quit()
+        ''' beautiful lines: something like the following
+        MnFeCoNiAlCu
+        increment: 5
+        strain_r: 0.001
+        temperature: 300
+        element: Mn-Co, Fe-Ni,Al-Cu
+        ratio:50.0:50.0,50.0:50.0,50.0:50.0
+        data:
+        Mn,Fe,Co,Ni,Al,Cu
+        12.60,12.09,11.12,10.94,16.472, 11.810
+        338.84,26.375,262.89,199.1,65.498, 128.6
+        130.52,8.9429,101.66,76.0,23.922, 48.0
+        '''
 
-                e1sub = [item.strip(' ') for item in (line.strip('\n').split(':')[1].split(",")[0].split('-'))]
-                eline1 = e1sub[0]
-                if len(e1sub)>1: 
-                    for item in e1sub[1:]: 
-                        eline1 = eline1 + '-'+item
-                e2sub = [item.strip(' ') for item in (line.strip('\n').split(':')[1].split(",")[1].split('-'))]
-                eline2 = e2sub[0]
+        element_line =  [i for i,s in enumerate(fhlines) if "element" in s.lower()][0]
+        increment_line =  [i for i,s in enumerate(fhlines) if "increment" in s.lower()][0]
+        ratio_line = [i for i,s in enumerate(fhlines) if "ratio" in s.lower()][0]
+        structure_line = [i for i,s in enumerate(fhlines) if "structure" in s.lower()][0]
+        strain_rate_line = [i for i,s in enumerate(fhlines) if "strain_r" in s.lower()][0]
+        temperature_line = [i for i,s in enumerate(fhlines) if "temperature" in s.lower()][0]
+        data_line = [i for i,s in enumerate(fhlines) if "data" in s.lower()][0]
 
-                if len(e2sub)>1: 
-                    for item in e2sub[1:]: 
-                #        print(item)
-                        eline2 = eline2 + '-'+item
+        #element line
+        if len(fhlines[element_line].strip('\n').split(':')[1].split(","))!=3: print('element line input invalid');quit()
+        else:
+            e1sub = [item.strip(' ') for item in (fhlines[element_line].strip('\n').split(':')[1].split(",")[0].split('-'))]
+            eline1 = e1sub[0]
+            if len(e1sub)>1: 
+                for item in e1sub[1:]: 
+                    eline1 = eline1 + '-'+item
+            e2sub = [item.strip(' ') for item in (fhlines[element_line].strip('\n').split(':')[1].split(",")[1].split('-'))]
+            eline2 = e2sub[0]
 
-                e3sub = [item.strip(' ') for item in (line.strip('\n').split(':')[1].split(",")[2].split('-'))]
-                #print(e1sub,e2sub,e3sub)
-                #print(len(e1sub),len(e2sub),len(e3sub))
+            if len(e2sub)>1: 
+                for item in e2sub[1:]: 
+            #        print(item)
+                    eline2 = eline2 + '-'+item
 
-                eline3 = e3sub[0]
-                if len(e3sub)>1: 
-                    for item in e3sub[1:]: 
-                        eline3 = eline3 + '-'+item
+            e3sub = [item.strip(' ') for item in (fhlines[element_line].strip('\n').split(':')[1].split(",")[2].split('-'))]
+            #print(e1sub,e2sub,e3sub)
+            #print(len(e1sub),len(e2sub),len(e3sub))
 
-                elementline = 'element: '+eline1+', ' + eline2+', '+eline3+'\n'
+            eline3 = e3sub[0]
+            if len(e3sub)>1: 
+                for item in e3sub[1:]: 
+                    eline3 = eline3 + '-'+item
 
-            if re.search('ratio',line,re.IGNORECASE):
-                if len(line.strip('\n').split(':')[1].split(","))!=3: print('element input invalid');quit()
+            elementline = 'element: '+eline1+', ' + eline2+', '+eline3+'\n'
+            print('element: '+eline1+', ' + eline2+', '+eline3)
+        #ratio line 
+        if len(fhlines[ratio_line].strip('\n').split(':')[1].split(","))!=3: print('ratio line input invalid');quit()
+        else:
+            e1ratio = [item.strip(' ') for item in (fhlines[ratio_line].strip('\n').split(':')[1].split(",")[0].split('-'))]
+            e2ratio = [item.strip(' ') for item in (fhlines[ratio_line].strip('\n').split(':')[1].split(",")[1].split('-'))]
+            e3ratio = [item.strip(' ') for item in (fhlines[ratio_line].strip('\n').split(':')[1].split(",")[2].split('-'))]
+            ratioline = 'ratio: '+ str(e1ratio)+', '+ str(e2ratio)+', '+ str(e3ratio)+'\n'
+            print('ratio: '+ str(e1ratio)+', '+ str(e2ratio)+', '+ str(e3ratio))
 
-                e1ratio = [item.strip(' ') for item in (line.strip('\n').split(':')[1].split(",")[0].split('-'))]
-                e2ratio = [item.strip(' ') for item in (line.strip('\n').split(':')[1].split(",")[1].split('-'))]
-                e3ratio = [item.strip(' ') for item in (line.strip('\n').split(':')[1].split(",")[2].split('-'))]
-                ratioline = 'ratio: '+ str(e1ratio)+', '+ str(e2ratio)+', '+ str(e3ratio)+'\n'
+        if 'fcc' not in fhlines[structure_line].lower() and 'bcc' not in fhlines[structure_line].lower():print('structure line input invalid');quit()
+        else:
+            structure = fhlines[structure_line].strip('\n').split(':')[1].strip(' ').lower()
+            structureline = 'structure: '+str(structure) + '\n'
+            print('Structure: ',str(structure) )
+        try:T = fhlines[temperature_line].strip('\n').split(':')[1].strip(' ');Tline = 'temperature: '+ str(T)+'\n';print('Temperature: ',T, ' (K)')
+        except:print('temperature input invalid');quit();
 
-            if re.search('structure',line,re.IGNORECASE):
-                structure = line.strip('\n').split(':')[1].strip(' ').lower()
-                structureline = 'structure: '+str(structure) + '\n'
+        try:inc = fhlines[increment_line].strip('\n').split(':')[1].strip(' ');incline = 'increment: '+ str(inc)+'\n';print('Increment: ', inc,' (at.%)')
+        except:print('increment input invalid');quit();
+        
 
-            if re.search('temperature',line,re.IGNORECASE):
-                try:T = line.strip('\n').split(':')[1].strip(' ');Tline = 'temperature: '+ str(T)+'\n';print('Temperature: ',T)
-                except:print('temperature input invalid');quit();
-            if re.search('increment',line,re.IGNORECASE):
-                try:inc = line.strip('\n').split(':')[1].strip(' ');incline = 'increment: '+ str(inc)+'\n';print('Increment: ', inc)
-                except:print('temperature input invalid');quit();
-            if re.search('strain_r',line,re.IGNORECASE):
-                try: ep = (line.strip('\n').split(':')[1].strip(' ')); srline = 'strain_r: '+ str(ep)+'\n';print('Strain rate: ', ep)
-                except:print('strain rate input invalid')
-            if re.search('data',line,re.IGNORECASE):
-                N = fhlines.index(line)+1
+        try: ep = (fhlines[strain_rate_line].strip('\n').split(':')[1].strip(' ')); srline = 'strain_r: '+ str(ep)+'\n';print('Strain rate: ', ep, ' (/s)')
+        except:print('strain rate input invalid')
+        N = data_line+1
 
         if structure != 'fcc' and structure != 'bcc':
             print('structure input invalid, only support fcc or bcc');quit()
@@ -106,20 +128,20 @@ class read_inputfile:
         beautiful_lines.append(structureline)
         for line in fhlines[N-1:N+4]:
             beautiful_lines.append(line)
-        print(beautiful_lines)
+            
         return [e1sub, e2sub, e3sub], [e1ratio,e2ratio,e3ratio], e_order,structure,beautiful_lines
 
     def findnorganize(self):
         lines = open(self.file).readlines()
         for line in lines :
             if re.search('temperature',line,re.IGNORECASE):
-                try:T = line.strip('\n').split(':')[1].strip(' ');print('Temperature: ',T)
+                try:T = line.strip('\n').split(':')[1].strip(' ');#print('Temperature: ',T)
                 except:print('temperature input invalid');quit();
             if re.search('increment',line,re.IGNORECASE):
-                try:inc = line.strip('\n').split(':')[1].strip(' ');print('Increment: ', inc)
+                try:inc = line.strip('\n').split(':')[1].strip(' ');#print('Increment: ', inc)
                 except:print('temperature input invalid');quit();
             if re.search('strain_r',line,re.IGNORECASE):
-                try: ep = (line.strip('\n').split(':')[1].strip(' '));print('Strain rate: ', ep)
+                try: ep = (line.strip('\n').split(':')[1].strip(' '));#print('Strain rate: ', ep)
                 except:print('strain rate input invalid')
             if re.search('data',line,re.IGNORECASE):
                 N = lines.index(line)+1
@@ -137,8 +159,8 @@ def main():
     # debug
     g = read_inputfile('input_example')
     elements,ratios,e_order,structure = g.grouping()
-    print(elements,ratios,e_order,structure)
+    #print(elements,ratios,e_order,structure)
     Vlist, Elist, Slist, T, ep, inc = g.findnorganize()
-    print(Vlist)
+    #print(Vlist)
 if __name__ == "__main__":
     main()

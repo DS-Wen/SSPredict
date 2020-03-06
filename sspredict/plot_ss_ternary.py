@@ -159,6 +159,7 @@ def main():
         X = np.array(Xlist)
         Y = np.array(Ylist)
         Z = np.array(Zlist)
+        XY_val = np.array(XYlist)
     #color = [str(item) for item in Z]
     #print(Z,type(Z),color)
     lowerlim = round(min(Z)/100,0)*100-50;
@@ -198,8 +199,8 @@ def main():
             plt.plot(CX,CY,'k')
     Xi = np.linspace(min(X),max(X),1000);Yi = np.linspace(min(Y),max(Y),1000)
     XX,YY = np.meshgrid(Xi, Yi)
-    ZZ = griddata(X,Y,Z,Xi,Yi,interp='nn')
-    #print(XX)
+    ZZ = (griddata((X,Y) ,Z,(XX,YY),method='linear'))
+    #print(XY_val)
 
     Ch2 = plt.contourf(XX,YY,ZZ, level, cmap=cm)
     Cl2 = plt.colorbar(Ch2,shrink=0.75,orientation='vertical',ticks = ticks)

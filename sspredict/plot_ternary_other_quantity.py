@@ -209,7 +209,7 @@ def main():
             CY = C3*np.sqrt(3)/2
             plt.plot(CX,CY,'k')
 
-    ZZ = griddata(X,Y,Z,Xi,Yi,interp='nn')
+    ZZ = (griddata((X,Y) ,Z,(XX,YY),method='linear'))
     Ch = plt.contourf(XX,YY,ZZ, level, cmap=cm)
     Cl = plt.colorbar(Ch,shrink=0.75,orientation='vertical',ticks = ticks1)
     Cl.set_label(label=r'$\Delta \sigma_{ss} \ (MPa)$',FontSize=15,weight='bold')

@@ -231,7 +231,7 @@ def main():
 
     
 
-    ZZ_x = griddata(X,Y,Z_x,Xi,Yi,interp='nn')
+    ZZ_x = (griddata((X,Y) ,Z_x,(XX,YY),method='linear'))
     Ch2 = plt.contourf(XX,YY,ZZ_x, level2, cmap=cm)
     Cl2 = plt.colorbar(Ch2,shrink=0.75,orientation='vertical',ticks = ticks2)
     Cl2.set_label(label=property_n,FontSize=15)

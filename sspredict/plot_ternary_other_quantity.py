@@ -4,7 +4,7 @@ from matplotlib.lines import Line2D
 import re
 import argparse
 import pandas as pd
-from matplotlib.mlab import griddata
+from scipy.interpolate import griddata
 from argparse import RawTextHelpFormatter
 
 

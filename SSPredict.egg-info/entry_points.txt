@@ -1,0 +1,3 @@
+[console_scripts]
+sspredict.predict = sspredict.master:main
+
